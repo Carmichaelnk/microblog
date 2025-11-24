@@ -1,1 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Environmental variables
+.env
+*.env
+.flaskenv
+
+# Flask instance folder
+instance/
+
+# OS files
+.DS_Store
+
+# IDE files
 .idea/
+.vscode/
+
+# Byte compiled
+*.egg-info/
+dist/
+build/
+
+# Sensitive config
+config.py

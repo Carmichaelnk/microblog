@@ -1,0 +1,96 @@
+2025-11-20 11:33:56,693 ERROR: Exception on /user/john [GET] [in /Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/carmichaelnjoroge/microblog/app/routes.py", line 76, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/carmichaelnjoroge/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/carmichaelnjoroge/microblog/app/templates/base.html", line 32, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/carmichaelnjoroge/microblog/app/templates/user.html", line 11, in block 'content'
+    <p>{{ user.followers_count() }} followers, {{ user.following_count() }} following.</p>
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/utils.py", line 92, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'followers_count'
+2025-11-20 11:37:25,477 ERROR: Exception on /user/john [GET] [in /Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/carmichaelnjoroge/microblog/app/routes.py", line 76, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/carmichaelnjoroge/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/carmichaelnjoroge/microblog/app/templates/base.html", line 32, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/carmichaelnjoroge/microblog/app/templates/user.html", line 11, in block 'content'
+    <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/utils.py", line 92, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'followers_count'
+2025-11-20 11:37:41,526 ERROR: Exception on /user/john [GET] [in /Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/Users/carmichaelnjoroge/microblog/app/routes.py", line 76, in user
+    return render_template('user.html', user=user, posts=posts, form=form)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/carmichaelnjoroge/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/carmichaelnjoroge/microblog/app/templates/base.html", line 32, in top-level template code
+    {% block content %}{% endblock %}
+  File "/Users/carmichaelnjoroge/microblog/app/templates/user.html", line 11, in block 'content'
+    <p>{{ user.followers.count() }} followers, {{ user.followed.count() }} following.</p>
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/utils.py", line 92, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: 'app.models.User object' has no attribute 'followers_count'
+2025-11-20 11:40:04,285 INFO: Microblog startup [in /Users/carmichaelnjoroge/microblog/app/__init__.py:46]
+2025-11-20 11:40:18,240 INFO: Microblog startup [in /Users/carmichaelnjoroge/microblog/app/__init__.py:46]
+2025-11-21 12:14:53,156 INFO: Microblog startup [in /Users/carmichaelnjoroge/microblog/app/__init__.py:46]
