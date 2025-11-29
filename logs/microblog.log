@@ -31,3 +31,35 @@ Traceback (most recent call last):
 jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endblock'. You probably made a nesting mistake. Jinja is expecting this tag, but currently looking for 'elif' or 'else' or 'endif'. The innermost block that needs to be closed is 'if'.
 2025-11-28 06:31:04,287 INFO: Microblog startup [in /Users/carmichaelnjoroge/microblog/app/__init__.py:50]
 2025-11-28 06:39:32,210 INFO: Microblog startup [in /Users/carmichaelnjoroge/microblog/app/__init__.py:50]
+2025-11-29 06:47:27,120 INFO: Microblog startup [in /Users/carmichaelnjoroge/microblog/app/__init__.py:52]
+2025-11-29 06:49:44,927 INFO: Microblog startup [in /Users/carmichaelnjoroge/microblog/app/__init__.py:52]
+2025-11-29 06:49:46,678 ERROR: Exception on /login [GET] [in /Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py:875]
+Traceback (most recent call last):
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/Users/carmichaelnjoroge/microblog/app/routes.py", line 46, in login
+    return render_template('login.html', title='Sign In', form=form)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/Users/carmichaelnjoroge/microblog/app/templates/login.html", line 2, in top-level template code
+    {% import "bootstrap_wtf.html" as wtf %}
+  File "/Users/carmichaelnjoroge/microblog/app/templates/base.html", line 69, in top-level template code
+    {% block scripts %}
+  File "/Users/carmichaelnjoroge/microblog/app/templates/base.html", line 70, in block 'scripts'
+    {{ super() }}
+  File "/Users/carmichaelnjoroge/microblog/venv/lib/python3.10/site-packages/jinja2/utils.py", line 92, in from_obj
+    if hasattr(obj, "jinja_pass_arg"):
+jinja2.exceptions.UndefinedError: there is no parent block called 'scripts'.
+2025-11-29 06:50:16,279 INFO: Microblog startup [in /Users/carmichaelnjoroge/microblog/app/__init__.py:52]
