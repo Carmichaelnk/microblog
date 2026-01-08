@@ -8,6 +8,7 @@ from config import Config
 class TestConfig(Config):
     TESTING = True
     SQLALCHEMY_DATABASE_URI = 'sqlite://'  # prevents use of regular database, uses in-memory database
+    ELASTICSEARCH_URL = None
 
 
 class UserModelCase(unittest.TestCase):
