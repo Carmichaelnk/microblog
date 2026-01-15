@@ -31,3 +31,7 @@ build/
 
 # Sensitive config
 # config.py
+
+# Log files
+logs/
+*.log
